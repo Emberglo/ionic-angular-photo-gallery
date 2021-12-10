@@ -7,6 +7,25 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  public variable = 100;
+
+  public value = 0;
+
+  public array = [];
+
   constructor() {}
 
+  public add(): void {
+    this.variable += this.value;
+    this.array.push(this.variable);
+  }
+
+  public subtract(): void {
+    this.variable -= this.value;
+    this.array.push(this.variable);
+  }
+
+  public getIsNegative(num: number): boolean {
+    return num < 0;
+  }
 }

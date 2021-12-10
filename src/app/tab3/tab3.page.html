@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Prompt
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Prompt</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -20,9 +20,9 @@
         <ion-button color="danger" expand="full" (click)="showPrompt()">Show Prompt</ion-button>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="selectedData">
       <ion-col>
-        <ion-text>Hello {{selectedData.Name}}</ion-text>
+        <ion-text>Hello {{selectedData?.Name}}</ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>

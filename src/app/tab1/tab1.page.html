@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Dynamic Resizing
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Dynamic Resizing</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -26,6 +26,15 @@
       </ion-col>
       <ion-col size='12' size-sm='6' size-xl='3'>
         <ion-button>Submit</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{variable}}
+        <ion-button (click)="add()">Add {{value}}</ion-button>
+        <ion-button (click)="subtract()">Subtract {{value}}</ion-button>
+        <ion-input type='number' [(ngModel)]='value'></ion-input>
+        <ion-text *ngFor="let num of array" style="{{getIsNegative(num) ? 'color:red;' : 'color:green;'}}">{{num}}, </ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>
